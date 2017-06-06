@@ -3,4 +3,5 @@ project( calc_tree )
 
 set (CMAKE_CXX_STANDARD 11)
 
+add_subdirectory( libTree )
 add_subdirectory( calc )
