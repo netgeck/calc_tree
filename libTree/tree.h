@@ -9,35 +9,33 @@
 #define __TREE__H__
 
 #include <vector>
+#include <memory>
 #include <stddef.h> //size
 
-namespace tree {
+//namespace binTree {
 	
-class node;
-	
-typedef std::vector<tree::node*> nodeList;
+//class node;
+//	
+//typedef std::vector<binTree::node*> nodeList; //!< список узлов
 
 // узел
-class node {
-public:
-	node* getParent();
-	node* getChild();
-private:
-	node* m_parent;
-	nodeList m_childs;
+template <typename T>
+struct btNode {
+	T data;
+	btNode<T>* left;
+	btNode<T>* right;
 };
 
 
-
-// путь
-class path {
+template <typename T>
+class binTree {
 public:
-	path(const nodeList& orderedUnits);
+	binTree() = default;
+	virtual ~binTree() = default;
 	
-	// получить длину пути
-	size_t pathLength() { return m_path.size() - 1; };
+	btNode<T> root() const { return m_root; };
 private:
-	nodeList m_path;
+	btNode<T>* m_root;
 };
 
 // получить путь от узла к узлу
@@ -51,7 +49,7 @@ size_t nodeDepth(node* n, node* root){
 
 
 
-}
+//}
 
 #endif /* __TREE__H__ */
 
