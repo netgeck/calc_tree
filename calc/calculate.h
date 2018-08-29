@@ -9,6 +9,7 @@
 #define CALCULATE_H
 
 
+#include <iostream>
 #include <stdint.h>
 #include <string>
 
@@ -29,7 +30,13 @@ public:
 
 
 
-int32_t calculate(const binTree<expressionAtom>& expressionTree);
+//int32_t calculate(const binTree<expressionAtom>& expressionTree);
+
+
+tree::bin::Node<std::string_view> parse(const std::string_view expression);
+
+
+
 
 
 #endif /* CALCULATE_H */

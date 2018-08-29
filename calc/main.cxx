@@ -26,9 +26,10 @@ int main(int argc, char** argv) {
 		std::cin >> expression;
 	}
 	
-	std::cout << "Выражение: \"" << expression << "\"" << std::endl;
+	std::cout << "Вычисляем выражение: \"" << expression << "\"" << std::endl;
 	
 	try {
+		parse(expression);
 		//std::cout << calculate(expression) << std::endl;
 	} catch (std::runtime_error& e) {
 		std::cout << "Не удалось вычислить выражение: " << e.what() << std::endl;
